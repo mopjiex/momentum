@@ -31,4 +31,65 @@ function showTime()  {
 showTime();
 
 // ----------------------------
+//Приветствие
 
+let name = document.querySelector('.time__name');
+let timeGreeting = document.querySelector('.time__greeting');
+
+function setLocaleStorage() {
+    localStorage.setItem('name', name.value);
+}
+
+window.addEventListener('beforeunload', setLocaleStorage);
+
+function getLocaleStorage() {
+    if(localStorage.getItem('name')) {
+        name.value = localStorage.getItem('name');
+    }
+}
+
+window.addEventListener('load', getLocaleStorage);
+
+function getTimeOfDay() {
+    let hours = date.getHours();
+
+    switch(hours) {
+        case 4:
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        case 11:
+            return 'Доброе утро';
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+            return 'Добрый день';
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+        case 22:
+        case 23:
+            return 'Добрый вечер';
+        case 24:
+        case 1:
+        case 2:
+        case 3:
+            return 'Доброй ночи';
+    }
+}
+
+function showGreeting() {
+    timeGreeting.textContent = `${getTimeOfDay()}, `;
+    setTimeout(showGreeting, 1000);  
+}
+
+showGreeting();
+
+// ----------------------------
