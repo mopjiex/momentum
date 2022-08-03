@@ -159,3 +159,38 @@ swiperNext.addEventListener('click', () => {
     body.style.backgroundImage = `url(${images[getSlideNext()]})`;
 });
 // ----------------------------
+
+// Погода
+let weatherKey = '7de61897a092a321c372049b722f027d';
+let weatherNameCity = document.querySelector('.weather__name-city');
+let temperature = document.querySelector('.weather__temperature');
+let wind = document.querySelector('.weather__wind');
+let wet = document.querySelector('.weather__wet');
+let weatherImg = document.querySelector('.weather__img');
+weatherNameCity.value = 'Москва';
+
+async function getWeather() {  
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherNameCity.value}&lang=ru&appid=${weatherKey}&units=metric`;
+    const res = await fetch(url);
+    const data = await res.json(); 
+
+    weatherImg.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"</img>`;
+    temperature.innerHTML = `${data.main.temp}&#176; ${data.weather[0].description}`;
+    wind.innerHTML = `Скорость ветра ${data.wind.speed} м/c`;
+    wet.innerHTML = `Влажность ${data.main.humidity}%`;
+
+  }
+  getWeather()
+
+  weatherNameCity.addEventListener('change', getWeather);
+
+  window.addEventListener('beforeunload', () => {
+    localStorage.setItem('weatherNameCity', weatherNameCity.value);
+  });
+
+  window.addEventListener('load', () => {
+    if(localStorage.getItem('weatherNameCity')) {
+        weatherNameCity.value = localStorage.getItem('weatherNameCity');
+    }
+  });
+// ----------------------------
