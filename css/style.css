@@ -19,16 +19,141 @@ ul {
     list-style: none;
 }
 
+*:focus {outline: none}
+
+
+
 body {
     min-height: 100vh;
     background-image: url(../images/bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
 }
 
 .container {
     max-width: 1430px;
     padding: 0 15px;
     margin: 0 auto;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5vh;
+}
+
+
+
+.play__prev,
+.play__next {
+    width: 55px;
+}
+
+.play__list {
+    margin-top: 3vh;
+}
+
+.play__item {
+    margin-bottom: 1vh;
+    font-size: 16px;
+}
+
+.play__item:last-child {
+    margin-bottom: 0;
+}
+
+
+.weather__name-city {
+    min-width: 170px;
+    min-height: 34px;
+    padding: 5px;
+    font-size: 20px;
+    line-height: 24px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+}
+
+.weather__img {
+    margin-top: 2vh;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.weather__temperature,
+.weather__wind,
+.weather__wet {
+    font-size: 16px;
+    margin-top: 1vh;
+}
+
+.main {
+    margin-top: 10vh;
+}
+
+
+
+.time__container {
+    max-width: 630px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.time__time,
+.time__day {
+    text-align: center;
+}
+
+.time__time {
+    font-family: 'Arial-MT', sans-serif;
+    font-size: 100px;
+    letter-spacing: 6px;
+}
+
+.time__day {
+    margin-top: 2vh;
+    font-size: 24px;
+}
+
+.time__greetings {
+    display: flex;
+    margin-left: 3vw;
+}
+
+.time__greeting {
+    
+    margin-top: 2vh;
+    font-size: 40px;
+}
+
+.time__name {
+    max-width: 270px;
+    padding: 15px 0px 0 10px;
+    font-size: 40px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+}
+
+.footer__quotes {
+    margin-top: 20vh;
+    text-align: center;
+}
+
+.quotes__reload {
+    width: 32px;
+    height: 32px;
+}
+
+.quotes__text {
+    margin-top: 3vh;
+}
+
+.quotes__author {
+    margin-top: 2vh;
 }

@@ -13,27 +13,53 @@
         <div class="container">
             <div class="header__inner">
                 <div class="header__player">
+                    <div class="player__images">
+                        <img src="./images/svg/play-prev.svg" alt="" class="play__prev">
+                        <img src="./images/svg/play.svg" alt="" class="play__start">
+                        <img src="./images/svg/play-next.svg" alt="" class="play__next">
+                    </div>
 
+                    <ul class="play__list">
+                        <li class="play__item">Музыка 1</li>
+                        <li class="play__item">Музыка 2</li>
+                        <li class="play__item">Музыка 3</li>
+                        <li class="play__item">Музыка 4</li>
+                    </ul>
                 </div>
 
                 <div class="header__weather">
-
+                    <input type="text" class="weather__name-city">
+                    <img src="./images/заглушка.jpg" alt="" class="weather__img">
+                    <p class="weather__temperature">20</p>
+                    <p class="weather__wind">3м/c</p>
+                    <p class="weather__wet">46%</p>
                 </div>
             </div>
         </div>
     </header>
 
     <main class="main">
-        <div class="container">
+
+        <div class="time__container">
             <div class="main__time">
-                
+                <p class="time__time">09:00:11</p>
+                <p class="time__day">Westday, August 3</p>
+                <div class="time__greetings">
+                    <p class="time__greeting">Good morning</p>
+                    <input type="text" class="time__name" placeholder="[Enter name]">
+                </div>
             </div>
         </div>
+        
     </main>
 
     <footer class="footer">
-        <div class="footer__quotes">
-
+        <div class="container">
+            <div class="footer__quotes">
+                <img src="./images/svg/reload.svg" alt="" class="quotes__reload">
+                <p class="quotes__text">Какая-то цитата</p>
+                <p class="quotes__author">Какой-то автор</p>
+            </div>
         </div>
     </footer>
 </body>
