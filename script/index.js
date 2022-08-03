@@ -93,3 +93,69 @@ function showGreeting() {
 showGreeting();
 
 // ----------------------------
+// Смена фона
+let body = document.querySelector('body');
+let swiperPrev = document.querySelector('.swiper__prev');
+let swiperNext = document.querySelector('.swiper__next');
+
+let images = [
+    'images/bg/01.jpg',
+    'images/bg/02.jpg',
+    'images/bg/03.jpg',
+    'images/bg/04.jpg',
+    'images/bg/05.jpg',
+    'images/bg/06.jpg',
+    'images/bg/07.jpg',
+    'images/bg/08.jpg',
+    'images/bg/09.jpg',
+    'images/bg/19.jpg',
+    'images/bg/11.jpg',
+    'images/bg/12.jpg',
+    'images/bg/13.jpg',
+    'images/bg/14.jpg',
+    'images/bg/15.jpg',
+    'images/bg/16.jpg',
+    'images/bg/17.jpg',
+    'images/bg/18.jpg',
+    'images/bg/19.jpg',
+    'images/bg/20.jpg', 
+];
+
+function getRandomNum() {
+    return Math.floor(Math.random() * (19 - 0)) + 0;
+}
+
+let randomNum = getRandomNum();
+
+function setBg() {
+    const img = new Image();
+    img.src = images[getRandomNum()];
+    console.log(img.src);
+    img.addEventListener('load', () => {
+        body.style.backgroundImage = `url(${img.src})`;
+    })
+    setTimeout(setBg, 100000);
+}
+
+function getSlideNext() {
+    randomNum += 1;
+    if(randomNum == 20) randomNum = 0;
+    return randomNum;
+}
+
+function getSlidePrev() {
+    randomNum -= 1;
+    if(randomNum == -1) randomNum = 19;
+    return randomNum;
+}
+
+setBg();
+
+swiperPrev.addEventListener('click', () => {
+    body.style.backgroundImage = `url(${images[getSlidePrev()]})`;
+});
+
+swiperNext.addEventListener('click', () => {
+    body.style.backgroundImage = `url(${images[getSlideNext()]})`;
+});
+// ----------------------------

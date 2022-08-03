@@ -25,12 +25,12 @@ ul {
 
 body {
     min-height: 100vh;
-    background-image: url(../images/bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     color: #fff;
     font-family: 'Arial', sans-serif;
+    transition: all 1.5s;
 }
 
 .container {
