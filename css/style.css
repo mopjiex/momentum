@@ -112,9 +112,28 @@ body {
 
 .main {
     margin-top: 10vh;
+    position: relative;
 }
 
+.swiper {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    transition: all .5s;
+    cursor: pointer;
+}
 
+.swiper:hover {
+    transform: scale(1.5);
+}
+
+.swiper__prev {
+    left: 13%;
+}
+
+.swiper__next {
+    right: 13%;
+}
 
 .time__container {
     max-width: 630px;
