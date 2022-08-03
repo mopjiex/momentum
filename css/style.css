@@ -45,12 +45,25 @@ body {
     padding-top: 5vh;
 }
 
+.play {
+    cursor: pointer;
+    margin-right: 1vw;
+    transition: all .5s;
+}
 
+.play:last-child {
+    margin-right: 0;
+}
+
+.play:hover {
+    transform: scale(1.5);
+}
 
 .play__prev,
 .play__next {
     width: 55px;
 }
+
 
 .play__list {
     margin-top: 3vh;
@@ -59,12 +72,17 @@ body {
 .play__item {
     margin-bottom: 1vh;
     font-size: 16px;
+    transition: all .5s;
+    cursor: pointer;
 }
 
 .play__item:last-child {
     margin-bottom: 0;
 }
 
+.play__item:hover {
+    font-weight: 700;
+}
 
 .weather__name-city {
     min-width: 170px;
@@ -148,6 +166,12 @@ body {
 .quotes__reload {
     width: 32px;
     height: 32px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.quotes__reload:active {
+    transform: scale(1.5);
 }
 
 .quotes__text {
