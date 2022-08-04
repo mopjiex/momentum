@@ -167,6 +167,7 @@ body {
     
     margin-top: 2vh;
     font-size: 40px;
+    min-width: 280px;
 }
 
 .time__name {
@@ -191,7 +192,8 @@ body {
 }
 
 .quotes__reload:active {
-    transform: scale(1.5);
+    transform: scale(1.5) rotate(360deg);
+    
 }
 
 .quotes__text {

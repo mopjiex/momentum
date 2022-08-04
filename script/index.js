@@ -167,7 +167,7 @@ let temperature = document.querySelector('.weather__temperature');
 let wind = document.querySelector('.weather__wind');
 let wet = document.querySelector('.weather__wet');
 let weatherImg = document.querySelector('.weather__img');
-weatherNameCity.value = 'Москва';
+weatherNameCity.value = 'Минск';
 
 async function getWeather() {  
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherNameCity.value}&lang=ru&appid=${weatherKey}&units=metric`;
@@ -194,3 +194,24 @@ async function getWeather() {
     }
   });
 // ----------------------------
+// Цитаты
+
+let quotesReload = document.querySelector('.quotes__reload');
+let quotesText = document.querySelector('.quotes__text');
+let quotesAuthor = document.querySelector('.quotes__author');
+
+
+async function getQutes() {
+    const quotes = 'data.json';
+    const res = await fetch(quotes);
+    const data = await res.json();
+    let random = Math.round(0 - 0.5 + Math.random() * (data.length - 0 + 1));
+    quotesText.textContent = data[random].text;
+    quotesAuthor.textContent = data[random].author;
+}
+
+getQutes();
+quotesReload.addEventListener('click', getQutes);
+
+
+
