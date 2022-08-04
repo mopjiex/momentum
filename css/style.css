@@ -45,10 +45,41 @@ body {
     padding-top: 5vh;
 }
 
+.player__images {
+    display: flex;
+    gap: 5px;
+}
+
 .play {
     cursor: pointer;
     margin-right: 1vw;
     transition: all .5s;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+.play__prev {
+    background-image: url(../images/svg/play-prev.svg);
+}
+
+.play__start {
+    background-image: url(../images/svg/play.svg);
+}
+
+.play__stop {
+    background-image: url(../images/svg/pause.svg);
+}
+.play__next {
+    background-image: url(../images/svg/play-next.svg);
+}
+
+.play__prev,
+.play__start,
+.play__stop,
+.play__next {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .play:last-child {
@@ -59,12 +90,6 @@ body {
     transform: scale(1.5);
 }
 
-.play__prev,
-.play__next {
-    width: 55px;
-}
-
-
 .play__list {
     margin-top: 3vh;
 }
@@ -72,6 +97,7 @@ body {
 .play__item {
     margin-bottom: 1vh;
     font-size: 16px;
+    opacity: .7;
     transition: all .5s;
     cursor: pointer;
 }
@@ -81,7 +107,7 @@ body {
 }
 
 .play__item:hover {
-    font-weight: 700;
+    opacity: 1;
 }
 
 .weather__name-city {
@@ -167,11 +193,12 @@ body {
     
     margin-top: 2vh;
     font-size: 40px;
-    min-width: 280px;
+    
 }
 
 .time__name {
     max-width: 270px;
+    margin-top: 3px;
     padding: 15px 0px 0 10px;
     font-size: 40px;
     border: none;

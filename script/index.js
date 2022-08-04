@@ -213,5 +213,47 @@ async function getQutes() {
 getQutes();
 quotesReload.addEventListener('click', getQutes);
 
+// ----------------------------
+// Плеер
+
+let sounds = [
+    'sounds/Aqua Caelestis.mp3',
+    'sounds/Ennio Morricane.mp3',
+    'sounds/River Flows In You.mp3',
+    'sounds/Summer Wind.mp3'
+];
+
+let playStart = document.querySelector('.play__start');
+let playPrev = document.querySelector('.play__prev');
+let playItem = document.querySelectorAll('.play__item');
+
+let isPlay = false;
+const audio = new Audio();
+
+function playAudio() {
+    isPlay = true;
+    if(isPlay) {
+        audio.src = sounds[0];
+        audio.currentTime = 0;
+        audio.play();
+        playStart.src = '/images/svg/play.svg'
+    } else if (!isPlay){
+        isPlay = false;
+        audio.pause();
+        playStart.src = '/images/svg/pause.svg'
+    }
+}
+
+function pauseAudio() {
+    audio.pause();
+    playStart.src = '/images/svg/pause.svg'
+}
+
+function player() {
+
+}
+
+playStart.addEventListener('click', playAudio);
+playPrev.addEventListener('click', pauseAudio);
 
 
