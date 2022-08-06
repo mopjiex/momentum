@@ -1,8 +1,37 @@
 
-//Часы и календарь
+//Переменные часы и календарь
 const date = new Date();
 let timeTime = document.querySelector('.time__time');
 let timeDay = document.querySelector('.time__day');
+
+//Переменные приветствия
+let name = document.querySelector('.time__name');
+let timeGreeting = document.querySelector('.time__greeting');
+
+//Переменные фона
+let body = document.querySelector('body');
+let swiperPrev = document.querySelector('.swiper__prev');
+let swiperNext = document.querySelector('.swiper__next');
+
+//Переменные погоды
+let weatherKey = '7de61897a092a321c372049b722f027d';
+let weatherNameCity = document.querySelector('.weather__name-city');
+let temperature = document.querySelector('.weather__temperature');
+let wind = document.querySelector('.weather__wind');
+let wet = document.querySelector('.weather__wet');
+let weatherImg = document.querySelector('.weather__img');
+
+//Переменнные цитат
+let quotesReload = document.querySelector('.quotes__reload');
+let quotesText = document.querySelector('.quotes__text');
+let quotesAuthor = document.querySelector('.quotes__author');
+
+//Переменные плеера
+let playStart = document.querySelector('.play__start');
+let playPrev = document.querySelector('.play__prev');
+let playItem = document.querySelectorAll('.play__item');
+
+//Часы и календарь
 
 function showDate() {
     const options = {month: 'long', day: 'numeric', timeZone: 'UTC'};
@@ -32,9 +61,6 @@ showTime();
 
 // ----------------------------
 //Приветствие
-
-let name = document.querySelector('.time__name');
-let timeGreeting = document.querySelector('.time__greeting');
 
 function setLocaleStorage() {
     localStorage.setItem('name', name.value);
@@ -94,9 +120,6 @@ showGreeting();
 
 // ----------------------------
 // Смена фона
-let body = document.querySelector('body');
-let swiperPrev = document.querySelector('.swiper__prev');
-let swiperNext = document.querySelector('.swiper__next');
 
 let images = [
     'images/bg/01.jpg',
@@ -161,12 +184,7 @@ swiperNext.addEventListener('click', () => {
 // ----------------------------
 
 // Погода
-let weatherKey = '7de61897a092a321c372049b722f027d';
-let weatherNameCity = document.querySelector('.weather__name-city');
-let temperature = document.querySelector('.weather__temperature');
-let wind = document.querySelector('.weather__wind');
-let wet = document.querySelector('.weather__wet');
-let weatherImg = document.querySelector('.weather__img');
+
 weatherNameCity.value = 'Минск';
 
 async function getWeather() {  
@@ -178,6 +196,7 @@ async function getWeather() {
     temperature.innerHTML = `${data.main.temp}&#176; ${data.weather[0].description}`;
     wind.innerHTML = `Скорость ветра ${data.wind.speed} м/c`;
     wet.innerHTML = `Влажность ${data.main.humidity}%`;
+    setTimeout(getWeather, 1000);
 
   }
   getWeather()
@@ -196,11 +215,6 @@ async function getWeather() {
 // ----------------------------
 // Цитаты
 
-let quotesReload = document.querySelector('.quotes__reload');
-let quotesText = document.querySelector('.quotes__text');
-let quotesAuthor = document.querySelector('.quotes__author');
-
-
 async function getQutes() {
     const quotes = 'data.json';
     const res = await fetch(quotes);
@@ -215,45 +229,51 @@ quotesReload.addEventListener('click', getQutes);
 
 // ----------------------------
 // Плеер
-
-let sounds = [
-    'sounds/Aqua Caelestis.mp3',
-    'sounds/Ennio Morricane.mp3',
-    'sounds/River Flows In You.mp3',
-    'sounds/Summer Wind.mp3'
+const playList = [
+    {
+        title: 'Aqua Caelestis',
+        src: 'sounds/Aqua Caelestis.mp3',
+    },
+    {
+        title: 'River Flow In You',
+        src: 'sounds/River Flows In You.mp3',
+    },
+    {
+        title: 'Summer Wind',
+        src: 'sounds/Summer Wind.mp3',
+    },
+    {
+        title: 'Ennio Morricone',
+        src: 'sounds/Ennio Morricane.mp3',
+    }
 ];
-
-let playStart = document.querySelector('.play__start');
-let playPrev = document.querySelector('.play__prev');
-let playItem = document.querySelectorAll('.play__item');
+console.log(playList)
 
 let isPlay = false;
 const audio = new Audio();
 
 function playAudio() {
-    isPlay = true;
-    if(isPlay) {
-        audio.src = sounds[0];
+
+        audio.src = playList[0].src;
         audio.currentTime = 0;
         audio.play();
-        playStart.src = '/images/svg/play.svg'
-    } else if (!isPlay){
-        isPlay = false;
-        audio.pause();
-        playStart.src = '/images/svg/pause.svg'
-    }
 }
 
 function pauseAudio() {
     audio.pause();
-    playStart.src = '/images/svg/pause.svg'
+    
 }
 
 function player() {
 
 }
 
+function toggleBtn() {
+    playStart.classList.toggle('play__stop');
+}
+
 playStart.addEventListener('click', playAudio);
+playStart.addEventListener('click', toggleBtn);
 playPrev.addEventListener('click', pauseAudio);
 
 

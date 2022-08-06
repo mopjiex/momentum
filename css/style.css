@@ -60,10 +60,12 @@ body {
 
 .play__prev {
     background-image: url(../images/svg/play-prev.svg);
+    
 }
 
 .play__start {
     background-image: url(../images/svg/play.svg);
+   
 }
 
 .play__stop {
@@ -71,6 +73,7 @@ body {
 }
 .play__next {
     background-image: url(../images/svg/play-next.svg);
+    
 }
 
 .play__prev,
