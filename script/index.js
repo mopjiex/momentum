@@ -244,36 +244,58 @@ const playList = [
     },
     {
         title: 'Ennio Morricone',
-        src: 'sounds/Ennio Morricane.mp3',
+        src: 'sounds/Ennio Morricone.mp3',
     }
 ];
-console.log(playList)
 
 let isPlay = false;
 const audio = new Audio();
+let count = 0;
 
-function playAudio() {
+const playNext = document.querySelector('.play__next');
 
-        audio.src = playList[0].src;
-        audio.currentTime = 0;
-        audio.play();
-}
+playNext.addEventListener('click', ()=> {
+    if(count > playList.length - 1) count = 0;
+    count++;
+});
 
-function pauseAudio() {
-    audio.pause();
-    
-}
+playPrev.addEventListener('click', ()=> {
+    if(count == 0) count = playList.length;
+    count--;
+});
+
 
 function player() {
-
+    if(!isPlay) {
+        audio.src = playList[count].src;
+        audio.currentTime = 0;
+        audio.play();
+        isPlay = true;
+    } else {
+        audio.pause();
+        isPlay = false;
+    }
 }
 
 function toggleBtn() {
     playStart.classList.toggle('play__stop');
 }
 
-playStart.addEventListener('click', playAudio);
+
+const playlist = document.querySelector('.play__list');
+function printPlayList() {
+    playList.forEach(el => {
+        let playItem = document.createElement('li');
+        playlist.append(playItem);
+        playItem.classList.add('play__item');
+        playItem.textContent = el.title;
+        console.log(el.title)
+    })
+}
+
+printPlayList()
+
+playStart.addEventListener('click', player);
 playStart.addEventListener('click', toggleBtn);
-playPrev.addEventListener('click', pauseAudio);
 
 
