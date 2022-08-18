@@ -148,7 +148,6 @@ body {
 .swiper {
     width: 32px;
     height: 32px;
-    position: absolute;
     transition: all .5s;
     cursor: pointer;
 }
@@ -157,18 +156,16 @@ body {
     transform: scale(1.5);
 }
 
-.swiper__prev {
-    left: 13%;
-}
-
-.swiper__next {
-    right: 13%;
-}
-
 .time__container {
     max-width: 630px;
     padding: 0 15px;
     margin: 0 auto;
+}
+
+.time__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .time__time,
