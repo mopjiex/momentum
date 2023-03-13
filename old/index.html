@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./script/index.js" defer></script>
+    <title>Momentum</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__player">
+                    <div class="player__images">
+                        <div class="play play__prev"></div>
+                        <div class="play play__start"></div>
+                        <div class="play play__next"></div>
+                    </div>
+
+                    <ul class="play__list">
+                    </ul>
+                </div>
+
+                <div class="header__weather">
+                    <input type="text" class="weather__name-city" onchange="this.value">
+                    <div class="weather__img">
+
+                    </div>
+                    <p class="weather__temperature"></p>
+                    <p class="weather__wind"></p>
+                    <p class="weather__wet"></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="time__inner">
+                <img src="./images/svg/slider-prev.svg" alt="" class="swiper__prev swiper">
+
+                <div class="time__container">
+                    <div class="main__time">
+                        <p class="time__time"></p>
+                        <p class="time__day">Westday, August 3</p>
+                        <div class="time__greetings">
+                            <p class="time__greeting"></p>
+                            <input type="text" class="time__name" placeholder="[Enter name]">
+                        </div>
+                    </div>
+                </div>
+
+                <img src="./images/svg/slider-next.svg" alt="" class="swiper__next swiper">
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__quotes">
+                <img src="./images/svg/reload.svg" alt="" class="quotes__reload">
+                <p class="quotes__text"></p>
+                <p class="quotes__author"></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

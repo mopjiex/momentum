@@ -4,67 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./script/index.js" defer></script>
+    <script src="./js/main.js" defer></script>
     <title>Momentum</title>
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="header__inner">
-                <div class="header__player">
-                    <div class="player__images">
-                        <div class="play play__prev"></div>
-                        <div class="play play__start"></div>
-                        <div class="play play__next"></div>
-                    </div>
+                <div class="player">
+                    <div class="player__inner">
+                        <div class="player__images">
+                            <img src="./images/playersImg/play-prev.svg" alt="" class="play-prev player__images-item">
+                            <img src="./images/playersImg/play.svg" alt="" class="play-img play-play player__images-item">
+                            <img src="./images/playersImg/play-next.svg" alt="" class="play-next player__images-item">
+                        </div>
 
-                    <ul class="play__list">
-                    </ul>
+                        <div class="player__wrapper">
+                            <div class="volume">
+                                <img src="./images/playersImg/high-volume.png" alt="" class="volume__img">
+                                <input class="music__volume" type="range" min="0" max="100" value="50"> 
+                            </div>
+                        <div class="current-time">
+                            <img src="./images/playersImg/current-time.png" alt="" class="current-time__img">
+                            <input class="play__bar" type="range" min="0" max="100" value="0">
+                            <p class="current-time__text"></p>
+                        </div>
+                           
+                        </div>
+                        
+                    </div>
+                   
+                    
+                    <div class="player__playlist">
+                        <ul class="playlist__list">
+                            
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="header__weather">
-                    <input type="text" class="weather__name-city" onchange="this.value">
-                    <div class="weather__img">
-
-                    </div>
-                    <p class="weather__temperature"></p>
-                    <p class="weather__wind"></p>
-                    <p class="weather__wet"></p>
+                <div class="weather">
+                    <input type="text" class="weather__input" placeholder="Город">
+                    <p class="weather__temperature weather__text"></p>
+                    <p class="weather__wind weather__text"></p>
+                    <p class="weather__humidity weather__text"></p>
                 </div>
             </div>
         </div>
     </header>
-
     <main class="main">
-        <div class="container">
-            <div class="time__inner">
-                <img src="./images/svg/slider-prev.svg" alt="" class="swiper__prev swiper">
+        <section class="time">
+            <div class="container">
+                <div class="time__inner">
+                    <h1 class="time__title"><span class="hours"></span>:<span class="minutes"></span>:<span class="seconds"></span></h1>
+                    <p class="time__day"></p>
 
-                <div class="time__container">
-                    <div class="main__time">
-                        <p class="time__time"></p>
-                        <p class="time__day">Westday, August 3</p>
-                        <div class="time__greetings">
-                            <p class="time__greeting"></p>
-                            <input type="text" class="time__name" placeholder="[Enter name]">
-                        </div>
+                    <div class="time__welcome-inner">
+                        <p class="time__welcome"></p> 
+                        <input type="text" class="time__welcome-input" placeholder="[Enter name]">
                     </div>
-                </div>
+                    
+                    <img src="./images/slider/slider-prev.svg" alt="" class="slider slider__prev">
+                    <img src="./images/slider/slider-next.svg" alt="" class="slider slider__next">
+                
 
-                <img src="./images/svg/slider-next.svg" alt="" class="swiper__next swiper">
+                </div>
+                
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer__quotes">
-                <img src="./images/svg/reload.svg" alt="" class="quotes__reload">
+            <div class="footer__inner">
+                <img src="./images/quotes/reload.svg" alt="" class="quotes__img">
                 <p class="quotes__text"></p>
                 <p class="quotes__author"></p>
             </div>
+            
         </div>
     </footer>
 </body>

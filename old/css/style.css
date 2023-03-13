@@ -1,0 +1,232 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 ,h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+*:focus {outline: none}
+
+
+
+body {
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    transition: all 1.5s;
+}
+
+.container {
+    max-width: 1430px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 5vh;
+}
+
+.player__images {
+    display: flex;
+    gap: 5px;
+}
+
+.play {
+    cursor: pointer;
+    margin-right: 1vw;
+    transition: all .5s;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+.play__prev {
+    background-image: url(../images/svg/play-prev.svg);
+    
+}
+
+.play__start {
+    background-image: url(../images/svg/play.svg);
+   
+}
+
+.play__stop {
+    background-image: url(../images/svg/pause.svg);
+}
+.play__next {
+    background-image: url(../images/svg/play-next.svg);
+    
+}
+
+.play__prev,
+.play__start,
+.play__stop,
+.play__next {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.play:last-child {
+    margin-right: 0;
+}
+
+.play:hover {
+    transform: scale(1.5);
+}
+
+.play__list {
+    margin-top: 3vh;
+}
+
+.play__item {
+    margin-bottom: 1vh;
+    font-size: 16px;
+    opacity: .7;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.play__item:last-child {
+    margin-bottom: 0;
+}
+
+.play__item:hover {
+    opacity: 1;
+}
+
+.weather__name-city {
+    min-width: 170px;
+    min-height: 34px;
+    padding: 5px;
+    font-size: 20px;
+    line-height: 24px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+}
+
+.weather__img {
+  
+}
+
+.weather__img img {
+    width: 64px;
+}
+
+.weather__temperature,
+.weather__wind,
+.weather__wet {
+    font-size: 16px;
+    margin-bottom: 1vh;
+}
+
+.main {
+    margin-top: 10vh;
+    position: relative;
+}
+
+.swiper {
+    width: 32px;
+    height: 32px;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.swiper:hover {
+    transform: scale(1.5);
+}
+
+.time__container {
+    max-width: 630px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.time__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.time__time,
+.time__day {
+    text-align: center;
+}
+
+.time__time {
+    font-family: 'Arial-MT', sans-serif;
+    font-size: 100px;
+    letter-spacing: 6px;
+}
+
+.time__day {
+    margin-top: 2vh;
+    font-size: 24px;
+}
+
+.time__greetings {
+    display: flex;
+    margin-left: 3vw;
+}
+
+.time__greeting {
+    
+    margin-top: 2vh;
+    font-size: 40px;
+    
+}
+
+.time__name {
+    max-width: 270px;
+    margin-top: 3px;
+    padding: 15px 0px 0 10px;
+    font-size: 40px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+}
+
+.footer__quotes {
+    margin-top: 20vh;
+    text-align: center;
+}
+
+.quotes__reload {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.quotes__reload:active {
+    transform: scale(1.5) rotate(360deg);
+    
+}
+
+.quotes__text {
+    margin-top: 3vh;
+}
+
+.quotes__author {
+    margin-top: 2vh;
+}
